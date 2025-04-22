@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno - GPT AI Assistant</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #btn {
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 18px;
+            background-color: #e3acac;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        #voice {
+            display: none;
+            margin: 20px auto;
+        }
+
+        #responseBox {
+            margin-top: 30px;
+            padding: 15px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <img src="ai3.gif" alt="logo" id="logo" style="width: 650px; height: auto;">
+        <h1>
+            I'm <span id="name" style="color: #ff8686; font-weight: 600;">Bruno</span>, Your <span id="va" style="color: #ffbfbf;">GPT AI assistant</span>
+        </h1>
+    </div>
+
+    <img src="voice.gif" alt="voice" id="voice" style="width: 200px; height: auto;">
+
+    <button id="btn">
+        <img src="mic.svg" alt="mic">
+        <span id="content">Click here to talk to me</span>
+    </button>
+
+    <div id="responseBox">Waiting for your question...</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
