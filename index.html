@@ -4,70 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bruno - GPT AI Assistant</title>
-    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
-    <style>
-        body {
-            background-color: #0f0f0f;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #btn {
-            margin-top: 30px;
-            padding: 15px 25px;
-            font-size: 18px;
-            background-color: #e3acac;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        #btn img {
-            width: 24px;
-            height: 24px;
-        }
-
-        #voice {
-            display: none;
-            margin: 20px auto;
-        }
-
-        #responseBox {
-            margin-top: 30px;
-            padding: 15px;
-            background: #1e1e1e;
-            border-radius: 10px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 18px;
-        }
-    </style>
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" type="image/svg+xml">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="mic.svg" as="image">
+    
+    <!-- Optimized font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#0f0f0f">
+    <meta name="description" content="Bruno - Your AI assistant for voice interactions">
 </head>
 <body>
-
-    <div>
-        <img src="ai3.gif" alt="logo" id="logo" style="width: 650px; height: auto;">
-        <h1>
-            I'm <span id="name" style="color: #ff8686; font-weight: 600;">Bruno</span>, Your <span id="va" style="color: #ffbfbf;">GPT AI assistant</span>
-        </h1>
+    <!-- Loading indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Loading Bruno...</p>
     </div>
 
-    <img src="voice.gif" alt="voice" id="voice" style="width: 200px; height: auto;">
+    <div id="mainContent" class="main-content" style="display: none;">
+        <div class="logo-container">
+            <img src="ai3.gif" alt="Bruno AI Assistant Logo" id="logo" loading="lazy" decoding="async">
+            <h1>
+                I'm <span id="name">Bruno</span>, Your <span id="va">GPT AI assistant</span>
+            </h1>
+        </div>
 
-    <button id="btn">
-        <img src="mic.svg" alt="mic">
-        <span id="content">Click here to talk to me</span>
-    </button>
+        <img src="voice.gif" alt="Voice indicator animation" id="voice" loading="lazy" decoding="async">
 
-    <div id="responseBox">Waiting for your question...</div>
+        <button id="btn" aria-label="Click to start voice interaction">
+            <img src="mic.svg" alt="Microphone icon" width="24" height="24">
+            <span id="content">Click here to talk to me</span>
+        </button>
 
-    <script src="script.js"></script>
+        <div id="responseBox" role="region" aria-live="polite" aria-label="AI Response">
+            Waiting for your question...
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
